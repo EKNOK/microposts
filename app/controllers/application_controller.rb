@@ -14,13 +14,9 @@ class ApplicationController < ActionController::Base
   
   def counts(user)
     @count_microposts = user.microposts.count
+    @count_followings = user.followings.count
+    @count_followers = user.followers.count
   end
   
-  def correct_user
-    @micropost = current_user.tasks.find_by(id: params[:id])
-    unless @micropost
-      redirect_to root_url
-    end
-  end
   
 end
