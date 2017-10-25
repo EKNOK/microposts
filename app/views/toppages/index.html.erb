@@ -10,6 +10,7 @@
     </aside>
     <div class="col-xs-8">
       <%= render 'microposts/microposts', microposts: @microposts %>
+      <%= link_to 'My favorite', favorites_user_path(current_user), class: 'btn btn-default' %>
     </div>
   </div>
 <% else %>
